@@ -1,0 +1,7 @@
+Excel tables - command: ctrl + t, allows for sorting and filtering data
+Sorting - sort by ascending/descending
+Filtering - keep/remove certain data based on a condition
+Freeze panes - freeze certain rows/columns to always show when scrolling, improves readability
+Formatting - ex. number format, color, font, bold, italics, border, fill color
+Relative vs. absolute references - relative used for applying formula across a row/column, absolute for using a constant value,
+use dollar sign for absolute reference
