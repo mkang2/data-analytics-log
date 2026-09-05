@@ -1,0 +1,22 @@
+9/4/2026
+IF
+IFS
+AND
+OR
+
+Practice on dataset
+1. What is the total sales amount for all 30 orders?
+2. What is the average sales amount per order?
+3. What are the minimum and maximum sales amounts?
+4. How many orders are in the dataset, and how many salesperson entries are filled in?
+5. Add a column called Order Size:
+    * 	• 	"Large" if Sales Amount ≥ $1,000
+    * 	• 	"Medium" if Sales Amount is between $500 and $999.99
+    * 	• 	"Small" if Sales Amount < $500
+6. Add a column called Discount Status:
+    * 	• 	"Discounted" if the discount is greater than 0%
+    * 	• 	"No Discount" otherwise
+7. How many orders came from the North region?
+8. What is the total sales amount for Electronics orders in the North region?
+9. What is the average sales amount for orders where the product is Laptop?
+10. What is the average sales amount for Sarah's orders in the East region?
