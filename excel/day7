@@ -1,0 +1,7 @@
+9/7/2026
+VLOOKUP - searches for specific value in a range and returns a corresponding value in another row or column
+Syntax - (lookup_value, table_array, column_number)
+XLOOKUP - similar to VLOOKUP, but can search in any direction, works with inserting/deleting columns, more flexible
+Syntax - (lookup_value, lookup_array, return_array)
+INDEX - returns value at specific row/column in a range
+MATCH - returns position of a value in an array
