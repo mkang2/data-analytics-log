@@ -1,0 +1,7 @@
+9/10/2026
+Data cleaning
+Remove duplicates - feature under data tab
+Missing values - use filter to find and replace
+Text cleanup - functions like trim, proper, lower/upper
+Date formatting - format cells
+Standardizing categories - find and replace, data validation
