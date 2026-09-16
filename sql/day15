@@ -1,0 +1,5 @@
+9/15/2026
+WHERE - used to filter records based on a condition
+AND - returns if all conditions are true
+OR - returns if at least one condition is true
+NOT - negation
