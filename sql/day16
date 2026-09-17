@@ -1,0 +1,4 @@
+9/16/2026
+ORDER BY - sorts result based on column name, ascending/descending order
+LIMIT - restricts number of rows returned
+DISTINCT - returns only unique values
