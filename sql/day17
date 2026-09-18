@@ -1,0 +1,5 @@
+9/17/2026
+LIKE - used in a WHERE clause to search for a specific pattern
+IN - used in the WHERE clause to check if a specified column's value matches any value within a provided list
+BETWEEN - used in a WHERE clause to filter based on a range
+IS NULL - tests for empty values
