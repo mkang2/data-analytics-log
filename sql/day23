@@ -1,0 +1,3 @@
+9/23/2026
+GROUP BY - groups rows based on a column(s), used with aggregate functions
+HAVING - filters results of GROUP BY statement
