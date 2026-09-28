@@ -1,0 +1,122 @@
+CREATE TABLE books (
+    book_id INTEGER PRIMARY KEY,
+    title TEXT,
+    author TEXT,
+    genre TEXT,
+    published_year INTEGER,
+    pages INTEGER,
+    rating REAL,
+    borrowed_count INTEGER,
+    language TEXT,
+    available BOOLEAN
+);
+
+INSERT INTO books
+(book_id, title, author, genre, published_year, pages, rating, borrowed_count, language, available)
+VALUES
+(1, 'The Silent Forest', 'Maya Chen', 'Mystery', 2018, 342, 4.6, 28, 'English', 1),
+(2, 'Beyond the Stars', 'Daniel Brooks', 'Science Fiction', 2021, 410, 4.8, 35, 'English', 0),
+(3, 'Garden of Shadows', 'Elena Ruiz', 'Mystery', 2015, 275, 4.2, 19, 'Spanish', 1),
+(4, 'Ocean at Dawn', 'Liam Carter', 'Fiction', 2019, 198, 4.5, 31, 'English', 1),
+(5, 'The Last Kingdom', 'Sarah Patel', 'Fantasy', 2012, 520, 4.7, 42, 'English', 0),
+(6, 'Midnight Train', 'James Wilson', 'Thriller', 2020, 310, 4.1, 24, 'English', 1),
+(7, 'Echoes of Time', 'Nora Adams', 'Science Fiction', 2017, 385, 4.4, 17, 'French', 1),
+(8, 'Beneath the Mountain', 'Alex Morgan', 'Adventure', 2010, 290, 3.9, 12, 'English', NULL),
+(9, 'Paper Moons', 'Olivia Reed', 'Fiction', 2022, 225, 4.9, 38, 'English', 0),
+(10, 'The Hidden City', 'Marcus Lee', 'Adventure', 2016, 450, 4.3, 26, 'Spanish', 1),
+(11, 'Winter Letters', 'Hannah Scott', 'Romance', 2014, 180, 4.0, 15, 'English', 1),
+(12, 'Digital Dreams', 'Ryan Kim', 'Science Fiction', 2023, 360, 4.6, 21, 'Korean', NULL),
+(13, 'House on the Hill', 'Emma Davis', 'Mystery', 2011, 330, 3.8, 9, 'English', 1),
+(14, 'Across the Desert', 'Noah Brown', 'Adventure', 2019, 415, 4.5, 33, 'French', 0),
+(15, 'The Forgotten Garden', 'Sophia White', 'Fiction', 2008, 245, 4.2, 18, 'English', 1),
+(16, 'Shadows at Midnight', 'Ethan Clark', 'Thriller', 2018, 375, 4.4, 29, 'English', 0),
+(17, 'A World Apart', 'Isabella Moore', 'Fantasy', 2020, 490, 4.6, 36, 'Spanish', 1),
+(18, 'The Ocean Between Us', 'Lucas Martin', 'Romance', 2016, 265, 4.1, 22, 'French', 1),
+(19, 'Code of Tomorrow', 'Grace Kim', 'Science Fiction', 2024, 430, 4.7, 27, 'Korean', 1),
+(20, 'Secrets of the Lake', 'William Turner', 'Mystery', 2009, 315, 3.7, 14, 'English', 0),
+(21, 'The Silver Path', 'Chloe Anderson', 'Fantasy', 2015, 380, 4.3, 25, 'English', 1),
+(22, 'Journey to the North', 'Benjamin Hall', 'Adventure', 2013, 340, 4.0, 16, 'English', NULL),
+(23, 'Broken Promises', 'Amelia King', 'Romance', 2021, 290, 4.5, 32, 'English', 0),
+(24, 'Fire in the Valley', 'Henry Scott', 'Thriller', 2017, 355, 4.2, 20, 'Spanish', 1),
+(25, 'Stars Beyond Earth', 'Mia Thompson', 'Science Fiction', 2019, 465, 4.8, 41, 'English', 0),
+(26, 'The Empty Room', 'Jack Lewis', 'Mystery', 2022, 305, 4.0, 23, 'English', 1),
+(27, 'Through the Wild', 'Lily Walker', 'Adventure', 2018, 425, 4.6, 34, 'French', 1),
+(28, 'Letters from Paris', 'Samuel Young', 'Romance', 2010, 210, 3.9, 11, 'French', 1),
+(29, 'Kingdom of Ash', 'Zoe Harris', 'Fantasy', 2023, 550, 4.9, 39, 'English', 0),
+(30, 'The Forgotten Planet', 'Daniel Evans', 'Science Fiction', 2014, 395, 4.3, 18, 'German', NULL),
+(31, 'Beneath the Surface', 'Rachel Green', 'Thriller', 2019, 280, 4.1, 26, 'English', 1),
+(32, 'Moonlight Road', 'Thomas Baker', 'Fiction', 2017, 310, 4.4, 21, 'English', 1),
+(33, 'The Crystal Tower', 'Laura Adams', 'Fantasy', 2011, 470, 4.2, 30, 'Spanish', 0),
+(34, 'Lost in the Rain', 'Kevin Miller', 'Mystery', 2020, 295, 4.5, 37, 'English', 1),
+(35, 'Across the Universe', 'Natalie King', 'Science Fiction', 2016, 440, 4.7, 32, 'French', 0),
+(36, 'The Long Journey', 'Robert Evans', 'Adventure', 2007, 365, 3.8, 13, 'English', 1),
+(37, 'Autumn Skies', 'Claire Wilson', 'Romance', 2018, 230, 4.3, 19, 'English', 1),
+(38, 'The Secret Passage', 'Andrew Scott', 'Mystery', 2013, 320, 4.1, 16, 'German', NULL),
+(39, 'Fire and Ice', 'Megan Taylor', 'Fantasy', 2022, 510, 4.8, 44, 'English', 0),
+(40, 'City of Dreams', 'Christopher Lee', 'Fiction', 2020, 260, 4.6, 29, 'Korean', 1),
+(41, 'The Final Signal', 'Jessica Brown', 'Thriller', 2024, 345, 4.7, 36, 'English', 1),
+(42, 'Rivers of Gold', 'Matthew Davis', 'Adventure', 2015, 400, 4.2, 23, 'Spanish', 1),
+(43, 'A Thousand Miles', 'Sarah Morgan', 'Romance', 2019, 275, 4.4, 28, 'French', 0),
+(44, 'The Dark Room', 'Jonathan White', 'Mystery', 2006, 355, 3.6, 8, 'English', 1),
+(45, 'Future World', 'Rebecca Clark', 'Science Fiction', 2022, 480, 4.9, 46, 'English', 0),
+(46, 'The Wild Coast', 'Patrick Moore', 'Adventure', 2021, 390, 4.5, 31, 'German', 1),
+(47, 'Falling Stars', 'Emily Harris', 'Fiction', 2014, 205, 4.0, 17, 'English', NULL),
+(48, 'The Ancient Door', 'Steven Hall', 'Fantasy', 2009, 430, 3.9, 14, 'Spanish', 1),
+(49, 'Night Without End', 'Victoria Young', 'Thriller', 2016, 375, 4.3, 27, 'English', 0),
+(50, 'The Last Horizon', 'Charles Martin', 'Science Fiction', 2018, 455, 4.6, 33, 'English', 1);
+
+Queries
+1) Find the 5 highest rated books
+SELECT title
+FROM books 
+ORDER BY rating DESC
+LIMIT 5;
+
+2) Find all books written in Spanish or French
+SELECT title
+FROM books 
+WHERE language IN ('Spanish', 'French')
+
+3) Find all books whose title contains the word "the" sorted alphabetically
+SELECT title
+FROM books 
+WHERE title LIKE '%the%'
+ORDER BY title;
+
+4) Find books published between 2015 and 2020
+SELECT title
+FROM books 
+WHERE published_year BETWEEN 2015 and 2020;
+
+5) Find books where availability is unknown
+SELECT title
+FROM books
+WHERE available IS NULL;
+
+6) Find all distinct genres
+SELECT DISTINCT genre
+FROM books;
+
+7) Find the total number of books and the average rating of all books.
+SELECT COUNT(title), AVG(rating)
+FROM books;
+
+8) Find the total number of times all books have been borrowed.
+SELECT SUM(borrowed_count)
+FROM books;
+
+9) Find the highest rating and lowest rating among all books.
+SELECT 
+    MAX(rating) AS highest_rating,
+    MIN(rating) AS lowest_rating
+FROM books;
+
+10) Group the books by genre and find the number of books and average rating for each genre. Only display genres that have at least 5 books, and sort them by average rating from highest to lowest.
+SELECT 
+    genre,
+    COUNT(*) AS book_count,
+    AVG(rating) AS average_rating
+FROM books
+GROUP BY genre
+HAVING COUNT(*) >= 5
+ORDER BY average_rating DESC;
