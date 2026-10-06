@@ -1,0 +1,3 @@
+10/5/2026
+CASE - used to define different results based on specified conditions
+COALESCE - returns first non-null value in a list
