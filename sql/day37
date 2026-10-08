@@ -1,0 +1,5 @@
+10/7/2026
+Window Functions
+ROW_NUMBER() - assigns a unique sequential integer to each row
+RANK() - assigns a ranking integer to each row, skips numbers when there are ties
+DENSE_RANK() - assigns a ranking integer to each row, provides continuous numbers
