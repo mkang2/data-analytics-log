@@ -1,0 +1,3 @@
+10/9/2026
+LAG() - retrieves the value of a column from a previous row of a window
+LEAD() - retrieves the value of a column from a subsequent row of a window
