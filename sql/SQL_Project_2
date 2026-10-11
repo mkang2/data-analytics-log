@@ -1,0 +1,147 @@
+CREATE TABLE sales (
+    sale_id INT PRIMARY KEY,
+    order_id INT,
+    order_date DATE,
+    customer_id INT,
+    customer_name VARCHAR(100),
+    city VARCHAR(50),
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    quantity INT,
+    unit_price DECIMAL(10,2),
+    order_status VARCHAR(20)
+);
+
+INSERT INTO sales VALUES
+(1,101,'2024-01-05',1,'Alice','New York','Laptop','Electronics',1,900,'Completed'),
+(2,101,'2024-01-05',1,'Alice','New York','Mouse','Accessories',2,25,'Completed'),
+(3,102,'2024-01-12',2,'Bob','Chicago','Headphones','Electronics',2,75,'Completed'),
+(4,103,'2024-01-18',3,'Carol','Boston','Desk','Furniture',1,300,'Completed'),
+(5,104,'2024-01-25',4,'David','New York','Keyboard','Accessories',2,50,'Completed'),
+
+(6,105,'2024-02-03',1,'Alice','New York','Laptop','Electronics',1,900,'Completed'),
+(7,106,'2024-02-08',2,'Bob','Chicago','Phone','Electronics',1,600,'Completed'),
+(8,107,'2024-02-14',5,'Emma',NULL,'Chair','Furniture',2,120,'Completed'),
+(9,108,'2024-02-20',3,'Carol','Boston','Mouse','Accessories',3,25,'Completed'),
+(10,109,'2024-02-26',6,'Frank','Seattle','Monitor','Electronics',1,250,'Cancelled'),
+
+(11,110,'2024-03-04',4,'David','New York','Desk','Furniture',2,300,'Completed'),
+(12,111,'2024-03-09',5,'Emma',NULL,'Chair','Furniture',1,120,'Completed'),
+(13,112,'2024-03-15',2,'Bob','Chicago','Headphones','Electronics',1,75,'Completed'),
+(14,113,'2024-03-21',7,'Grace','Boston','Phone','Electronics',2,600,'Completed'),
+(15,114,'2024-03-28',1,'Alice','New York','Keyboard','Accessories',1,50,'Completed'),
+
+(16,115,'2024-04-02',3,'Carol','Boston','Laptop','Electronics',1,900,'Completed'),
+(17,116,'2024-04-07',4,'David','New York','Chair','Furniture',2,120,'Completed'),
+(18,117,'2024-04-13',6,'Frank','Seattle','Phone','Electronics',1,600,'Completed'),
+(19,118,'2024-04-19',1,'Alice','New York','Monitor','Electronics',2,250,'Completed'),
+(20,119,'2024-04-25',8,'Henry','Chicago','Mouse','Accessories',4,25,'Pending'),
+
+(21,120,'2024-05-03',2,'Bob','Chicago','Laptop','Electronics',1,900,'Completed'),
+(22,121,'2024-05-08',5,'Emma',NULL,'Desk','Furniture',1,300,'Completed'),
+(23,122,'2024-05-14',7,'Grace','Boston','Headphones','Electronics',3,75,'Completed'),
+(24,123,'2024-05-20',3,'Carol','Boston','Phone','Electronics',1,600,'Completed'),
+(25,124,'2024-05-27',6,'Frank','Seattle','Mouse','Accessories',2,25,'Completed'),
+
+(26,125,'2024-06-04',1,'Alice','New York','Laptop','Electronics',1,900,'Completed'),
+(27,126,'2024-06-10',4,'David','New York','Desk','Furniture',1,300,'Completed'),
+(28,127,'2024-06-16',8,'Henry','Chicago','Keyboard','Accessories',2,50,'Completed'),
+(29,128,'2024-06-22',2,'Bob','Chicago','Phone','Electronics',1,600,'Cancelled'),
+(30,129,'2024-06-28',7,'Grace','Boston','Chair','Furniture',2,120,'Completed'),
+
+(31,130,'2024-07-05',3,'Carol','Boston','Laptop','Electronics',1,900,'Completed'),
+(32,131,'2024-07-11',5,'Emma',NULL,'Monitor','Electronics',1,250,'Completed'),
+(33,132,'2024-07-17',1,'Alice','New York','Headphones','Electronics',2,75,'Completed'),
+(34,133,'2024-07-23',6,'Frank','Seattle','Desk','Furniture',1,300,'Completed'),
+(35,134,'2024-07-29',7,'Grace','Boston','Phone','Electronics',1,600,'Completed'),
+
+(36,135,'2024-08-04',2,'Bob','Chicago','Laptop','Electronics',1,900,'Completed'),
+(37,136,'2024-08-10',4,'David','New York','Mouse','Accessories',3,25,'Completed'),
+(38,137,'2024-08-16',8,'Henry','Chicago','Monitor','Electronics',1,NULL,'Completed'),
+(39,138,'2024-08-22',3,'Carol','Boston','Chair','Furniture',1,120,'Pending'),
+(40,139,'2024-08-28',9,'Isabella',NULL,'Keyboard','Accessories',1,50,'Completed');
+
+1) Customer Spending Analysis
+SELECT
+    customer_id,
+    customer_name,
+    COALESCE(city, 'Unknown') AS city,
+    SUM(quantity * unit_price) AS total_spending,
+    CASE
+        WHEN SUM(quantity * unit_price) >= 2000
+            THEN 'High Value'
+        WHEN SUM(quantity * unit_price) >= 1000
+            THEN 'Medium Value'
+        ELSE 'Low Value'
+    END AS customer_segment
+FROM sales
+WHERE order_status = 'Completed'
+GROUP BY customer_id, customer_name, city
+ORDER BY total_spending DESC;
+
+2) Monthly Spending
+SELECT SUBSTRING(order_date, 6, 2) AS month, 
+SUM(quantity * unit_price) AS monthly_revenue
+FROM sales
+WHERE order_status = 'Completed'
+GROUP BY month
+ORDER BY monthly_revenue DESC;
+
+3) Repeat customers (more than 4 times)
+SELECT customer_id, customer_name
+FROM sales
+WHERE order_status = 'Completed'
+GROUP BY customer_id, customer_name
+HAVING COUNT(DISTINCT order_id) > 4;
+
+4) Top products
+SELECT
+    product_name,
+    SUM(quantity * unit_price) AS revenue,
+    RANK() OVER (
+        ORDER BY SUM(quantity * unit_price) DESC
+    ) AS product_rank
+FROM sales
+WHERE order_status = 'Completed'
+GROUP BY product_name;
+
+5) Customer Ranking
+WITH customer_totals AS (
+    SELECT
+        customer_id,
+        customer_name,
+        SUM(quantity * unit_price) AS spending
+    FROM sales
+    WHERE order_status = 'Completed'
+    GROUP BY customer_id, customer_name
+)
+SELECT
+    *,
+    RANK() OVER (ORDER BY spending DESC) AS spending_rank
+FROM customer_totals;
+
+6) Revenue trends
+WITH monthly AS (
+    SELECT
+        SUBSTRING(order_date, 6, 2) AS month,
+        SUM(quantity * unit_price) AS revenue
+    FROM sales
+    WHERE order_status = 'Completed'
+    GROUP BY month
+)
+SELECT
+    month,
+    revenue,
+    SUM(revenue) OVER (
+        ORDER BY month
+    ) AS running_revenue,
+    AVG(revenue) OVER () AS average_monthly_revenue,
+    LAG(revenue) OVER (
+        ORDER BY month
+    ) AS previous_month_revenue,
+    LEAD(revenue) OVER (
+        ORDER BY month
+    ) AS next_month_revenue
+FROM monthly
+ORDER BY month;
+
