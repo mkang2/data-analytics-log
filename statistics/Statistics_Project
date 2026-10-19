@@ -1,0 +1,21 @@
+Statistics Analysis Project
+
+Iris Dataset - https://www.kaggle.com/datasets/himanshunakrani/iris-dataset/data
+Calculated using excel function
+
+Mean sepal width of iris versicolor: 3.418604651
+=AVERAGE(B10:B52)
+
+Median of iris setosa petal width: 1.5
+=MEDIAN(C2:C51)
+
+Standard deviation of the petal width of all flowers: 0.763160742
+=STDEV(D:D)
+
+Percent change in mean sepal length from iris setosa to iris virginica: 0.316020775
+J5=AVERAGE(A2:A51)
+J6=AVERAGE(A102:A151)
+=(J6-J5)/J5
+
+Correlation between petal length and petal width: 0.962757097
+=CORREL(C2:C151, D2:D151)
