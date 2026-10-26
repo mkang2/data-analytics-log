@@ -1,0 +1,30 @@
+weather_data = [
+    {"day": "Monday", "temp": 72, "rain": 0.0},
+    {"day": "Tuesday", "temp": 68, "rain": 0.2},
+    {"day": "Wednesday", "temp": 75, "rain": 0.0},
+    {"day": "Thursday", "temp": 63, "rain": 0.8},
+    {"day": "Friday", "temp": 70, "rain": 0.1},
+    {"day": "Saturday", "temp": 80, "rain": 0.0},
+    {"day": "Sunday", "temp": 77, "rain": 0.0}
+]
+  
+temperatures = []
+
+for day in weather_data:
+    temperatures.append(day["temp"])
+  
+average_temp = sum(temperatures) / len(temperatures)
+high_temp = max(temperatures)
+low_temp = min(temperatures)
+
+print("Weather Report")
+print("Average temperature:", round(average_temp,1), "F")
+print("Highest temperature:", high_temp, "F")
+print("Lowest temperature:", low_temp, "F")
+
+total_rain = 0
+
+for day in weather_data:
+    total_rain += day["rain"]
+
+print("Total weekly rainfall:", total_rain, "inches")
