@@ -1,0 +1,5 @@
+10/26/2026
+Pandas
+import pandas as pd
+read_csv() - loads data from a csv file to a pandas dataframe
+head() - returns the first n rows of a dataframe
