@@ -1,0 +1,24 @@
+import pandas as pd
+
+df = pd.read_csv("file name.csv")
+print(df)
+
+df.head()
+df.tail()
+df.info()
+df.describe()
+df.columns()
+
+Series - one dimensional structure
+Dataframe - two dimensional structure
+
+iloc - selects data using indices
+loc - selects data using row and column names
+
+df.drop() - remove data
+dr.dropna() - removes rows with NA
+df.fillna() - replaces missing values with specified values
+df.rename() - rename column
+
+df.value_counts() - frequency count of each unique values
+df.groupby() - splits dataframe into groups based on criteria
