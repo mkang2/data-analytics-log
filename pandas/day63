@@ -1,0 +1,4 @@
+Data Cleaning
+11/2/2026
+isna() - detects missing/null values
+dropna() - deletes missing/null values
