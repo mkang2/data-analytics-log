@@ -1,0 +1,3 @@
+11/3/2026
+fillna() - replaces missing values with a specified value
+drop_duplicates() - removes duplicate rows from a dataframe
