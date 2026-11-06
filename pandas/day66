@@ -1,0 +1,4 @@
+11/5/2026
+groupby() - splits dataframe into groups
+sort_values() - sorts dataframe by specified value
+merge() - combines two dataframes based on shared columns
