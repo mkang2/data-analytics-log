@@ -1,0 +1,4 @@
+11/9/2026
+Pandas Aggregate Functions
+Aggregate functions take values from a collection of data and process them into a single summary value
+Examples: sum(), mean(), median(), mode(), min(), max(), count()
