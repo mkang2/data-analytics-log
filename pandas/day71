@@ -1,0 +1,4 @@
+11/10/2026
+Pandas Grouping/Filtering
+Grouping - groupby(), can use with aggregate functions
+Filtering - boolean operators, loc(), isin(), query(), contains()
