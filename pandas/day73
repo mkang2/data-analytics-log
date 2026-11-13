@@ -1,0 +1,5 @@
+11/12/2026
+matplotlib
+import matplotlib.pyplot as plt
+bar chart - bar()
+line chart - plot()
