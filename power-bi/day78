@@ -1,0 +1,5 @@
+11/17/2026
+Power Query
+Allows for extracting, combining and transforming data
+Can rename, add, delete, split columns, change data type
+All transformation steps are saved and applied to any updated date in the source
