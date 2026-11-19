@@ -1,0 +1,12 @@
+11/18/2026
+Power BI Data Types
+Decimal
+Fixed Decimal - fixed decimal places
+Whole Number
+Date/Time/Date and Time
+Date/Time/Timezone
+Duration - length between two values
+Text
+Boolean - true/false
+Binary - binary data
+Change data type by selecting transform data
